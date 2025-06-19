@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(235, 135, 217);
+}
+
+h1 {
+    color: darkblue;
+    font-size: 4em;
+    text-align: center;
+}
+p {
+    color: darkgreen;
+    font-size: 2em;
+    text-align: center;
+}
