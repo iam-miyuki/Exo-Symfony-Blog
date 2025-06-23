@@ -33,4 +33,9 @@ class Author extends User
     {
         return $this->description;
     }
+     public function __toString()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
+
 }

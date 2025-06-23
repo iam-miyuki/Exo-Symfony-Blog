@@ -1,16 +1,27 @@
 {% extends "base.html.twig" %}
 {% block body %}
-   <h1>Liste des articles</h1>
-   <ul>
-   {% for post in posts %}
-    <li>
-        <p>Title: {{post.title}} </p>
-        <p>Contenu: {{post.content}} </p>
-        <p>
-            <span>publié au {{post.publishedAt|date('d/m/Y')}} - </span>
-            <span>par {{post.author.firstname ~ ' ' ~ post.author.lastname|upper }} </span>
-        </p>
-    </li>
-   {% endfor %}
-   </ul>
+	<h1>Liste des articles</h1>
+	<ul>
+		{% for post in posts %}
+			<li>
+				<p>Title:
+					{{post.title}}
+				</p>
+				<p>Contenu:
+					{{post.content}}
+				</p>
+				<p>
+					<span>publié au
+						{{post.publishedAt|date('d/m/Y')}}
+						-
+					</span>
+					<span>par
+						{% if post.author is not null %}
+							{{post.author.firstname ~ ' '~ post.author.lastname}}
+						{% endif %}
+					</span>
+				</p>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock %}

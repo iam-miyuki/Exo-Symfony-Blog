@@ -29,8 +29,7 @@ class Post
 
     #[ORM\JoinColumn(name: 'author_id', referencedColumnName: 'id')]
     #[ORM\ManyToOne(targetEntity: Author::class)]
-    private Author $author;
-
+    private ?Author $author = null;
 
     public function getId()
     {
@@ -85,9 +84,10 @@ class Post
         $this->author = $author;
         return $this;
     }
-    public function getAuthor(): Author
+    public function getAuthor(): ?Author
     {
         return $this->author;
     }
 
+   
 }
